@@ -1,1 +1,129 @@
-Hello World
+<!DOCTYPE html>
+
+<head>
+  <title>Bossggle Word Game</title>
+  <!-- <meta charset="utf-8" content="Character Set"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Latest compiled and minified CSS -->
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Word Dictionary -->
+  <script src="https://cdn.rawgit.com/tannerwelsh/dcd33611c1bc615fd5a1c8cadc05d1b2/raw/470cde9d72927fef717f354b3ba3718a0aaabb99/basicWords.js" charset="utf-8"></script>
+
+  <!-- External files -->
+  <link type="text/css" rel="stylesheet" href="main.css">
+  <script type="text/javascript" src="bossgle.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <br>
+    <div class="row">
+
+      <!-- Left Panel -->
+      <div class="col-md-4 no-float" style="background-color:#f6f4c7">
+
+        <h1>Bossggle</h1>
+        <p>Make words by clicking the letters!</p>
+        <ul>
+          <li>Only dictionary words count.</li>
+          <li>Each word must be a minimum of 3 letters.</li>
+          <li>You have 60 seconds.</li>
+        </ul>
+
+        <!-- <div class="score"> -->
+        <div class="score">
+          <!--  Add the score here-->
+          <h5>Score<span id="score-tally" class="score-right">0</span></h5>
+          <hr/>
+          <div>
+            <!--  Add the word count here-->
+            <h5>Words</h5>
+            <div class="align-score">
+              <div class="col-md-10" style="background-color:#9bd4f4">
+                <h5 id="chosen-words"></h5>
+              </div>
+              <div class="col-md-2" style="background-color:#9bd4f4">
+                <h5 id="word-score" class="score-bg" style="text-align:right"></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <a class="github" href="https://github.com/self-jw/bossggle">Fork me on github.</a>
+        </div>
+      </div>
+
+      <!-- Right Panel -->
+      <div class="col-md-8 no-float" style="background-color:#e4e9e2">
+
+        <div style="text-align:center">
+          <h1 id="letters">Selected Letters</h1>
+          <button id="submit" class="btn btn-primary" style="opacity:0.65">Submit</button>
+          <button id="clear" class="btn btn-success" style="opacity:0.65">Clear</button>
+          <button id="reset" class="btn btn-danger" style="opacity:0.65">Reset Board</button>
+        </div>
+        <!-- <div>
+          <button id="start" class="btn btn-start" style="opacity:0.5">Start Game</button>
+        </div> -->
+        <hr/>
+
+        <!-- First Row -->
+        <div class="aligner">
+          <div id="box1" class="aligner-item box">B1</div>
+          <div id="box2" class="aligner-item box">B2</div>
+          <div id="box3" class="aligner-item box">B3</div>
+          <div id="box4" class="aligner-item box">B4</div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="aligner">
+          <div id="box5" class="aligner-item box">B1</div>
+          <div id="box6" class="aligner-item box">B2</div>
+          <div id="box7" class="aligner-item box">B3</div>
+          <div id="box8" class="aligner-item box">B4</div>
+        </div>
+
+        <!-- Third Row -->
+        <div class="aligner">
+          <div id="box9" class="aligner-item box">B1</div>
+          <div id="box10" class="aligner-item box">B2</div>
+          <div id="box11" class="aligner-item box">B3</div>
+          <div id="box12" class="aligner-item box">B4</div>
+        </div>
+
+        <!-- Fourth Row -->
+        <div class="aligner">
+          <div id="box13" class="aligner-item box">B1</div>
+          <div id="box14" class="aligner-item box">B2</div>
+          <div id="box15" class="aligner-item box">B3</div>
+          <div id="box16" class="aligner-item box">B4</div>
+        </div>
+
+        <!-- Timer -->
+        <div>
+          <h3 style="text-align:center">Time Left : <span id='timer'>60</span></h3>
+        </div>
+
+        <!-- The Modal -->
+        <div id="modal-game-over" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content" style="text-align:center">
+            <span class="close">&times;</span>
+            <h3>Game Over!</h3>
+            <!-- <h5>Score<span id="score-tally" class="score-right">0</span></h5> -->
+            <button id="game-over" class="btn btn-game" style="opacity:0.5">Play Again</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
